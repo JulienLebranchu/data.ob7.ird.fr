@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright
+  -->
+
+<!--
+==============================================================================
+* This Ant build file is used to build the MI Geonetwork catalogue
+*
+* Run syntax: ant -buildfile mi_geonetwork.xml
+*
+==============================================================================
+-->
+<project name="mi_geonetwork" default="copyMIfiles" basedir=".">
+
+  <condition property="osys" value="macosx">
+    <os family="mac"/>
+  </condition>
+  <condition property="osys" value="win">
+    <os family="windows"/>
+  </condition>
+  <condition property="osys" value="unix">
+    <os family="unix"/>
+  </condition>
+
+  <!-- application information -->
+  <property name="appName" value="mi_geonetwork"/>
+  <property name="version" value="1.0"/>
+  <property name="subVersion" value="0"/>
+  <property name="javaVersion" value="1.8.0"/>
+  
+  <!-- Minimum version required -->
+  <property name="jre_url" value="http://openjdk.java.net/"/>
+  <property name="OS" value="Compiled on ${os.name} (${osys})"/>
+  <property name="ant.build.javac.target" value="1.8"/>
+  
+  <!-- Repository/Folder names -->
+  <property name="dest_repo" value=".././geonetwork/"/> <!-- ${dest_repo} -->
+  
+  <!-- Enable Dubug -->
+  <property name="debugOn" value="on"/>
+  
+  <!-- target is to copy all required files from private MI repo to build modifications into GeoNetwork build -->
+  <target name="copyMIfiles">
+
+    <!-- Replace MI Lucene files: -->
+    <copy file="./geonetwork/web/src/main/webapp/WEB-INF/config-lucene.xml"
+          tofile="${dest_repo}web/src/main/webapp/WEB-INF/config-lucene.xml"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web/src/main/webapp/WEB-INF/config-summary.xml"
+          tofile="${dest_repo}web/src/main/webapp/WEB-INF/config-summary.xml"
+          filtering="on" overwrite="yes"/>
+	
+	<!-- Update spring beans for Calender facet: -->
+	<copy file="./geonetwork/web/src/main/webResources/WEB-INF/config-spring-geonetwork.xml"
+          tofile="${dest_repo}web/src/main/webResources/WEB-INF/config-spring-geonetwork.xml"
+          filtering="on" overwrite="yes"/>
+		  
+    <copy file="./geonetwork/schemas/iso19139/src/main/plugin/iso19139/index-fields/default.xsl"
+          tofile="${dest_repo}schemas/iso19139/src/main/plugin/iso19139/index-fields/default.xsl"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- UI Files: -->
+    <copy file="./geonetwork/web-ui/src/main/resources/catalog/components/common/savedselections/partials/panel.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/components/common/savedselections/partials/panel.html"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/components/metadataactions/partials/related.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/components/metadataactions/partials/related.html"
+          filtering="on" overwrite="yes"/>
+
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/components/search/mdview/mdviewModule.js"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/components/search/mdview/mdviewModule.js"
+          filtering="on" overwrite="yes"/>
+
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/components/search/resultsview/partials/viewtemplates/grid.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/components/search/resultsview/partials/viewtemplates/grid.html"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/locales/en-core.json"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/locales/en-core.json"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/templates/top-toolbar.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/templates/top-toolbar.html"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/views/default/directives/partials/mdactionmenu.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/views/default/directives/partials/mdactionmenu.html"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/components/cookieWarning/partials/cookieWarning.html"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/components/cookieWarning/partials/cookieWarning.html"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- xslt files -->
+	<copy file="./geonetwork/web/src/main/webapp/xslt/base-layout-cssjs-loader.xsl"
+          tofile="${dest_repo}/web/src/main/webapp/xslt/base-layout-cssjs-loader.xsl"
+          filtering="on" overwrite="yes"/>
+	
+	<copy file="./geonetwork/web/src/main/webapp/xslt/base-layout.xsl"
+          tofile="${dest_repo}/web/src/main/webapp/xslt/base-layout.xsl"
+          filtering="on" overwrite="yes"/>
+
+	<!-- Copy multiple files in 'views/default/templates' location: -->
+	<copy todir="${dest_repo}web-ui/src/main/resources/catalog/views/default/templates/" overwrite="yes">
+	  <fileset dir="./geonetwork/web-ui/src/main/resources/catalog/views/default/templates" includes="**">
+	  </fileset>
+	</copy>
+	
+	<copy file="./geonetwork/web-ui/src/main/resources/catalog/views/default/module.js"
+          tofile="${dest_repo}web-ui/src/main/resources/catalog/views/default/module.js"
+          filtering="on" overwrite="yes"/>
+		
+	<!-- GeoNetwork Plugins -->
+	<!-- Web Application POM -->
+	<copy file="./geonetwork/web/pom.xml"
+          tofile="${dest_repo}web/pom.xml"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- Main schema POM -->
+	<copy file="./geonetwork/schemas/pom.xml"
+          tofile="${dest_repo}schemas/pom.xml"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- SeaDataNet CDI plugin POM -->
+	<copy file="./geonetwork/schemas/iso19139.sdn-cdi/pom.xml"
+          tofile="${dest_repo}schemas/iso19139.sdn-cdi/pom.xml"
+          filtering="on" overwrite="yes"/>
+
+	<!-- SeaDataNet CSR plugin POM -->
+	<copy file="./geonetwork/schemas/iso19139.sdn-csr/pom.xml"
+          tofile="${dest_repo}schemas/iso19139.sdn-csr/pom.xml"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- SensorML plugin POM -->
+	<copy file="./geonetwork/schemas/sensorML/pom.xml"
+          tofile="${dest_repo}schemas/sensorML/pom.xml"
+          filtering="on" overwrite="yes"/> 
+		  
+	<!-- Schema.org -->
+	<copy file="./geonetwork/schemas/iso19139/src/main/plugin/iso19139/formatter/xsl-view/view.xsl"
+          tofile="${dest_repo}schemas/iso19139/src/main/plugin/iso19139/formatter/xsl-view/view.xsl"
+          filtering="on" overwrite="yes"/> 
+
+	<!-- Note: SeaDataNet sub-modules (plugins) include out of date include files
+				These must be replaced from the ISO19139 source:
+				-	ISO19139Namespaces.java
+				-	ISO19139SchemaPlugin.java										-->
+	<copy file=".././geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
+          tofile="${dest_repo}schemas/iso19139.sdn-cdi/src/main/java/org/fao/geonet/schema/iso19139.sdn-cdi/ISO19139Namespaces.java"
+          filtering="on" overwrite="yes"/>
+	
+	<copy file=".././geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
+          tofile="${dest_repo}schemas/iso19139.sdn-cdi/src/main/java/org/fao/geonet/schema/iso19139.sdn-cdi/ISO19139SchemaPlugin.java"
+          filtering="on" overwrite="yes"/>
+
+	<copy file=".././geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
+          tofile="${dest_repo}schemas/iso19139.sdn-csr/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
+          filtering="on" overwrite="yes"/>
+	
+	<copy file=".././geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
+          tofile="${dest_repo}schemas/iso19139.sdn-csr/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- Calender Facet support -->
+	<copy file="./geonetwork/web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
+          tofile="${dest_repo}web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
+          filtering="on" overwrite="yes"/>
+		  
+	<!-- PNG Image Files -->
+	<copy file="./geonetwork/web/src/main/webapp/images/emff_logo.png"
+          tofile="${dest_repo}web/src/main/webapp/images/emff_logo.png"
+          filtering="on" overwrite="yes"/>
+
+	<copy file="./geonetwork/web/src/main/webapp/images/IDO_LogoLight.png"
+          tofile="${dest_repo}web/src/main/webapp/images/IDO_LogoLight.png"
+          filtering="on" overwrite="yes"/>
+		  
+	<copy file="./geonetwork/web/src/main/webapp/images/favicon.png"
+          tofile="${dest_repo}web/src/main/webapp/images/favicon.png"
+          filtering="on" overwrite="yes"/>
+		  
+  </target>
+
+</project>

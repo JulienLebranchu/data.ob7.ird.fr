@@ -1,0 +1,16 @@
+<div class="cookie-warning"
+     data-ng-show="{{showCookieWarning}}"
+     data-ng-controller="CookieWarningController">
+
+  <p class="{showCookieWarning}"
+     data-translate="">cookieWarning</p>
+  <p>
+    <a href="https://www.marine.ie/Home/site-area/online-policies/cookies" target="cookie_law"
+       data-translate="">moreOnCookie</a>
+  </p>
+  <p>
+    <span data-ng-click="close()" data-translate="">acceptCookie</span>&nbsp;
+    <span data-translate="" style="cursor: default; font-weight: normal;">OR</span>&nbsp;
+    <span data-ng-click="goAway()" data-translate="">rejectCookie</span>
+  </p>
+</div>
