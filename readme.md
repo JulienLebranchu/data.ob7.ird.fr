@@ -35,7 +35,7 @@ Ensure you have cloned the MI Data Catalogue Repository (this repo). This ensure
 Steps to clone MI Data Catalogue repository:
 
 - Launch a new Git CMD Window and naviagte to (or create) a folder for your git local repositories.
-- Run: `git clone --recurse-submodules https://github.com/IrishMarineInstitute/data-catalogue.git data-catalogue`
+- Run: `git clone --recurse-submodules https://github.com/IrishMarineInstitute/data.marine.ie.git data-catalogue`
 
 
 ## Detailed Build Steps:
