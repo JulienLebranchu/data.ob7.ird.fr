@@ -60,18 +60,17 @@ RUN curl -fsSL https://www.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-
 
 ENV ANT_HOME /usr/share/ant
 
-# clone MI Data Catalogue Repo (private - requires token)
+# clone MI Data Catalogue data.marine.ie Repo 
+WORKDIR /usr/share/
 
-# RUN git clone --recurse-submodules https://github.com/IrishMarineInstitute/data-catalogue.git data-catalogue
-
+RUN git clone --recurse-submodules https://github.com/IrishMarineInstitute/data.marine.ie.git data-catalogue
 # OR workaround copy files from host - change first location as appropriate to your system
-COPY H:\data-catalogue /data-catalogue
+# COPY H:\data-catalogue /data-catalogue
 
+WORKDIR /usr/share/
 # clone GeoNetwork Repo & Build
 RUN git clone --recurse-submodules https://github.com/geonetwork/core-geonetwork.git geonetwork
-
-WORKDIR geonetwork
-
+WORKDIR /usr/share/geonetwork
 RUN git checkout tags/3.6.0 -b build \
     && git status
 
@@ -80,16 +79,19 @@ RUN git checkout tags/3.6.0 -b build \
 RUN mvn clean install -DskipTests
 
 # navigate back to geonetwork to pull in sub-modules for Plugins
-WORKDIR geonetwork/schemas
+WORKDIR /usr/share/geonetwork/schemas
+RUN pwd
 
 RUN git submodule add https://github.com/metadata101/sensorML.git sensorML \
     && git submodule add https://github.com/metadata101/iso19139.sdn-csr.git \
     && git submodule add https://github.com/metadata101/iso19139.sdn-cdi.git
 
 # navigate back to the data-catalogue repo & run the Ant build script to copy custom MI content to the GeoNetwork repo
-WORKDIR data-catalogue
+WORKDIR /usr/share/data-catalogue/geonetwork
+RUN pwd
+RUN ant -buildfile /usr/share/data-catalogue/geonetwork/mi_geonetwork_build.xml
 
-RUN ant -buildfile mi_geonetwork_build.xml
-
-# # navigate back to the geonetwork repo to re-run Maven build & create WAR
+# navigate back to the geonetwork repo to re-run Maven build & create WAR
+WORKDIR /usr/share/geonetwork
+RUN pwd
 RUN mvn clean install -DskipTests
