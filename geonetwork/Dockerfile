@@ -71,7 +71,7 @@ WORKDIR /usr/share/
 # clone GeoNetwork Repo & Build
 RUN git clone --recurse-submodules https://github.com/geonetwork/core-geonetwork.git geonetwork
 WORKDIR /usr/share/geonetwork
-RUN git checkout tags/3.6.0 -b build \
+RUN git checkout tags/3.4.2 -b build \
     && git status
 
 # run a clean build
@@ -82,8 +82,9 @@ RUN mvn clean install -DskipTests
 WORKDIR /usr/share/geonetwork/schemas
 RUN pwd
 
-RUN git submodule add https://github.com/metadata101/sensorML.git sensorML \
-    && git submodule add https://github.com/metadata101/iso19139.sdn-csr.git \
+RUN git submodule add https://github.com/metadata101/sensorML.git sensorML
+WORKDIR /usr/share/geonetwork/schemas
+RUN git submodule add https://github.com/metadata101/iso19139.sdn-csr.git \
     && git submodule add https://github.com/metadata101/iso19139.sdn-cdi.git
 
 # navigate back to the data-catalogue repo & run the Ant build script to copy custom MI content to the GeoNetwork repo
