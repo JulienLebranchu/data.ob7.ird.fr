@@ -74,59 +74,59 @@
           tofile="${dest_repo}web-ui/src/main/resources/catalog/components/search/mdview/mdviewModule.js"
           filtering="on" overwrite="yes"/>
 
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/components/search/resultsview/partials/viewtemplates/grid.html"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/components/search/resultsview/partials/viewtemplates/grid.html"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/components/search/resultsview/partials/viewtemplates/grid.html"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/locales/en-core.json"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/locales/en-core.json"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/locales/en-core.json"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/templates/top-toolbar.html"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/templates/top-toolbar.html"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/templates/top-toolbar.html"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/views/default/directives/partials/mdactionmenu.html"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/views/default/directives/partials/mdactionmenu.html"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/views/default/directives/partials/mdactionmenu.html"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/components/cookieWarning/partials/cookieWarning.html"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/components/cookieWarning/partials/cookieWarning.html"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/components/cookieWarning/partials/cookieWarning.html"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- xslt files -->
-	<copy file="/usr/share/geonetwork/web/src/main/webapp/xslt/base-layout-cssjs-loader.xsl"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/xslt/base-layout-cssjs-loader.xsl"
           tofile="${dest_repo}/web/src/main/webapp/xslt/base-layout-cssjs-loader.xsl"
           filtering="on" overwrite="yes"/>
 	
-	<copy file="/usr/share/geonetwork/web/src/main/webapp/xslt/base-layout.xsl"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/xslt/base-layout.xsl"
           tofile="${dest_repo}/web/src/main/webapp/xslt/base-layout.xsl"
           filtering="on" overwrite="yes"/>
 
 	<!-- Copy multiple files in 'views/default/templates' location: -->
 	<copy todir="${dest_repo}web-ui/src/main/resources/catalog/views/default/templates/" overwrite="yes">
-	  <fileset dir="/usr/share/geonetwork/web-ui/src/main/resources/catalog/views/default/templates" includes="**">
+	  <fileset dir="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/views/default/templates" includes="**">
 	  </fileset>
 	</copy>
 	
-	<copy file="/usr/share/geonetwork/web-ui/src/main/resources/catalog/views/default/module.js"
+	<copy file="/usr/share/data-catalogue/geonetwork/web-ui/src/main/resources/catalog/views/default/module.js"
           tofile="${dest_repo}web-ui/src/main/resources/catalog/views/default/module.js"
           filtering="on" overwrite="yes"/>
 		
 	<!-- GeoNetwork Plugins -->
 	<!-- Web Application POM -->
-	<copy file="/usr/share/geonetwork/web/pom.xml"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/pom.xml"
           tofile="${dest_repo}web/pom.xml"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- Main schema POM -->
-	<copy file="/usr/share/geonetwork/schemas/pom.xml"
+	<copy file="/usr/share/data-catalogue/geonetwork/schemas/pom.xml"
           tofile="${dest_repo}schemas/pom.xml"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- Should be coming from data-catalogue, not geonetwork
   SeaDataNet CDI plugin POM -->
-	<copy file="/usr/share/geonetwork/schemas/iso19139.sdn-cdi/pom.xml"
+	<copy file="/usr/share/data-catalogue/geonetwork/schemas/iso19139.sdn-cdi/pom.xml"
           tofile="${dest_repo}schemas/iso19139.sdn-cdi/pom.xml"
           filtering="on" overwrite="yes"/>
 
@@ -141,7 +141,7 @@
           filtering="on" overwrite="yes"/> 
 		  
 	<!-- Schema.org -->
-	<copy file="/usr/share/geonetwork/schemas/iso19139/src/main/plugin/iso19139/formatter/xsl-view/view.xsl"
+	<copy file="/usr/share/data-catalogue/geonetwork/schemas/iso19139/src/main/plugin/iso19139/formatter/xsl-view/view.xsl"
           tofile="${dest_repo}schemas/iso19139/src/main/plugin/iso19139/formatter/xsl-view/view.xsl"
           filtering="on" overwrite="yes"/> 
 
@@ -166,20 +166,20 @@
           filtering="on" overwrite="yes"/>
 		  
 	<!-- Calender Facet support -->
-	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
+	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
           tofile="${dest_repo}web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- PNG Image Files -->
-	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/emff_logo.png"
+	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/emff_logo.png"
           tofile="${dest_repo}web/src/main/webapp/images/emff_logo.png"
           filtering="on" overwrite="yes"/>
 
-	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/IDO_LogoLight.png"
+	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/IDO_LogoLight.png"
           tofile="${dest_repo}web/src/main/webapp/images/IDO_LogoLight.png"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/favicon.png"
+	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/favicon.png"
           tofile="${dest_repo}web/src/main/webapp/images/favicon.png"
           filtering="on" overwrite="yes"/>
 		  
