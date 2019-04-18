@@ -166,20 +166,20 @@
           filtering="on" overwrite="yes"/>
 		  
 	<!-- Calender Facet support -->
-	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
           tofile="${dest_repo}web/src/main/webapp/WEB-INF/data/config/codelist/external/thesauri/temporal/calendar.rdf"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- PNG Image Files -->
-	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/emff_logo.png"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/emff_logo.png"
           tofile="${dest_repo}web/src/main/webapp/images/emff_logo.png"
           filtering="on" overwrite="yes"/>
 
-	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/IDO_LogoLight.png"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/IDO_LogoLight.png"
           tofile="${dest_repo}web/src/main/webapp/images/IDO_LogoLight.png"
           filtering="on" overwrite="yes"/>
 		  
-	<copy file="/usr/share/data-catalogue/data-catalogue/geonetwork/web/src/main/webapp/images/favicon.png"
+	<copy file="/usr/share/data-catalogue/geonetwork/web/src/main/webapp/images/favicon.png"
           tofile="${dest_repo}web/src/main/webapp/images/favicon.png"
           filtering="on" overwrite="yes"/>
 		  
