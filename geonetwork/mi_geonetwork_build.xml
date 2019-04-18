@@ -124,18 +124,19 @@
           tofile="${dest_repo}schemas/pom.xml"
           filtering="on" overwrite="yes"/>
 		  
-	<!-- SeaDataNet CDI plugin POM -->
+	<!-- Should be coming from data-catalogue, not geonetwork
+  SeaDataNet CDI plugin POM -->
 	<copy file="/usr/share/geonetwork/schemas/iso19139.sdn-cdi/pom.xml"
           tofile="${dest_repo}schemas/iso19139.sdn-cdi/pom.xml"
           filtering="on" overwrite="yes"/>
 
 	<!-- SeaDataNet CSR plugin POM -->
-	<copy file="/usr/share/geonetwork/schemas/iso19139.sdn-csr/pom.xml"
+	<copy file="/usr/share/data-catalogue/geonetwork/schemas/iso19139.sdn-csr/pom.xml"
           tofile="${dest_repo}schemas/iso19139.sdn-csr/pom.xml"
           filtering="on" overwrite="yes"/>
 		  
 	<!-- SensorML plugin POM -->
-	<copy file="/usr/share/geonetwork/schemas/sensorML/pom.xml"
+	<copy file="/usr/share/data-catalogue/geonetwork/schemas/sensorML/pom.xml"
           tofile="${dest_repo}schemas/sensorML/pom.xml"
           filtering="on" overwrite="yes"/> 
 		  
@@ -148,19 +149,19 @@
 				These must be replaced from the ISO19139 source:
 				-	ISO19139Namespaces.java
 				-	ISO19139SchemaPlugin.java										-->
-	<copy file="/usr/share/geonetwork/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
+	<copy file="/usr/share/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
           tofile="${dest_repo}schemas/iso19139.sdn-cdi/src/main/java/org/fao/geonet/schema/iso19139.sdn-cdi/ISO19139Namespaces.java"
           filtering="on" overwrite="yes"/>
 	
-	<copy file="/usr/share/geonetwork/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
+	<copy file="/usr/share/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
           tofile="${dest_repo}schemas/iso19139.sdn-cdi/src/main/java/org/fao/geonet/schema/iso19139.sdn-cdi/ISO19139SchemaPlugin.java"
           filtering="on" overwrite="yes"/>
 
-	<copy file="/usr/share/geonetwork/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
+	<copy file="/usr/share/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
           tofile="${dest_repo}schemas/iso19139.sdn-csr/src/main/java/org/fao/geonet/schema/iso19139/ISO19139Namespaces.java"
           filtering="on" overwrite="yes"/>
 	
-	<copy file="/usr/share/geonetwork/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
+	<copy file="/usr/share/geonetwork/schemas/iso19139/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
           tofile="${dest_repo}schemas/iso19139.sdn-csr/src/main/java/org/fao/geonet/schema/iso19139/ISO19139SchemaPlugin.java"
           filtering="on" overwrite="yes"/>
 		  
