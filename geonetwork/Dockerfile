@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 LABEL maintainer="Andrew Conway <andrew.conway@marine.ie>"
 
-# Inspired by
+# Inspired by:
 # https://github.com/cloudbees/java-build-tools-dockerfile/blob/master/Dockerfile
 
 # add custom apt-get sources
