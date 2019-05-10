@@ -80,8 +80,6 @@ RUN mvn clean install -DskipTests
 
 # navigate back to geonetwork to pull in sub-modules for Plugins
 WORKDIR /usr/share/geonetwork/schemas
-RUN pwd
-
 RUN git submodule add https://github.com/metadata101/sensorML.git sensorML
 WORKDIR /usr/share/geonetwork/schemas
 RUN git submodule add https://github.com/metadata101/iso19139.sdn-csr.git \
@@ -89,10 +87,8 @@ RUN git submodule add https://github.com/metadata101/iso19139.sdn-csr.git \
 
 # navigate back to the data-catalogue repo & run the Ant build script to copy custom MI content to the GeoNetwork repo
 WORKDIR /usr/share/data-catalogue/geonetwork
-RUN pwd
 RUN ant -buildfile /usr/share/data-catalogue/geonetwork/mi_geonetwork_build.xml
 
 # navigate back to the geonetwork repo to re-run Maven build & create WAR
 WORKDIR /usr/share/geonetwork
-RUN pwd
 RUN mvn clean install -DskipTests
