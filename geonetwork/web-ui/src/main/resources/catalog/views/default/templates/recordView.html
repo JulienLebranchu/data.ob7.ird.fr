@@ -79,7 +79,7 @@
     }
 </style>
 
-{{mdView.current.record}}
+<!-- {{mdView.current.record}} -->
 
 
  <!-- creates mymap and mypolygone - loaded on home page - only runs subsequent script if data is available to populate variables -->
@@ -90,7 +90,7 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38286559-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38286559-1" type="text/javascript"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() {
@@ -143,7 +143,7 @@
         // use regex to filter sections of the content to variables.
         var citeTitle = (citation || {})[/(^|)[)](|$)\w?/g];
         var citeOrg = (citation || {})[/(^|)Marine Institute(|$)\w?/g];
-        alert(citeTitle);
+        // alert(citeTitle);
 
     });
     </script>
