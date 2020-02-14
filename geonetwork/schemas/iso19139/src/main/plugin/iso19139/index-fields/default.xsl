@@ -174,6 +174,14 @@
 		<Field name="suggestedCitation" string="{string(.)}" store="true" index="true"/>
 	</xsl:template>
   
+	<xsl:template mode="index" match="//gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/@codeListValue='pointOfContact']/gmd:organisationName/gco:CharacterString">
+		<Field name="organisation" string="{string(.)}" store="true" index="true"/>
+	</xsl:template>
+	
+	<xsl:template mode="index" match="//gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/@codeListValue='distributor']/gmd:organisationName/gco:CharacterString">
+		<Field name="organisation" string="{string(.)}" store="true" index="true"/>
+	</xsl:template>
+	
 	<xsl:template mode="index" match="//gmd:CI_ResponsibleParty[gmd:role/gmd:CI_RoleCode/@codeListValue='custodian']/gmd:organisationName/gco:CharacterString">
 		<Field name="organisation" string="{string(.)}" store="true" index="true"/>
 	</xsl:template>
