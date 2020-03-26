@@ -26,12 +26,9 @@
   The main entry point for all user interface generated
   from XSLT.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="2.0"
-                exclude-result-prefixes="#all">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0" exclude-result-prefixes="#all">
 
-  <xsl:output omit-xml-declaration="yes" method="html" doctype-system="html" indent="yes"
-              encoding="UTF-8"/>
+  <xsl:output omit-xml-declaration="yes" method="html" doctype-system="html" indent="yes" encoding="UTF-8"/>
 
   <xsl:include href="common/base-variables.xsl"/>
   <xsl:include href="base-layout-cssjs-loader.xsl"/>
@@ -41,9 +38,19 @@
     <html ng-app="{$angularModule}" lang="{$lang}" id="ng-app">
       <head>
         <title>
-          <xsl:value-of select="concat($env/system/site/name, ' - ', $env/system/site/organization)"
-          />
+          <xsl:value-of select="concat($env/system/site/name, ' - ', $env/system/site/organization)" />
         </title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-31592543-1"></script>
+        <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-31592543-1');
+        </script>
+
+
         <meta name="google-site-verification" content="u5QGxt3hqXVdrVTh8HdY9yzBww2RF-Ode35eH9wY-HY" />
         <meta charset="utf-8"/>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
@@ -53,12 +60,9 @@
         <meta name="keywords" content=""/>
 
 
-        <link rel="icon" sizes="16x16 32x32 48x48" type="image/png"
-              href="../../images/logos/favicon.png"/>
-        <link href="rss.search?sortBy=changeDate" rel="alternate" type="application/rss+xml"
-              title="{concat($env/system/site/name, ' - ', $env/system/site/organization)}"/>
-        <link href="portal.opensearch" rel="search" type="application/opensearchdescription+xml"
-              title="{concat($env/system/site/name, ' - ', $env/system/site/organization)}"/>
+        <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="../../images/logos/favicon.png"/>
+        <link href="rss.search?sortBy=changeDate" rel="alternate" type="application/rss+xml" title="{concat($env/system/site/name, ' - ', $env/system/site/organization)}"/>
+        <link href="portal.opensearch" rel="search" type="application/opensearchdescription+xml" title="{concat($env/system/site/name, ' - ', $env/system/site/organization)}"/>
 
         <xsl:call-template name="css-load"/>
       </head>
@@ -86,9 +90,7 @@
             </xsl:if>
             <!-- AngularJS application -->
             <xsl:if test="$angularApp != 'gn_search' and $angularApp != 'gn_viewer' and $angularApp != 'gn_formatter_viewer'">
-              <div class="navbar navbar-default gn-top-bar"
-                   data-ng-hide="layout.hideTopToolBar"
-                   data-ng-include="'{$uiResourcesPath}templates/top-toolbar.html'"></div>
+              <div class="navbar navbar-default gn-top-bar" data-ng-hide="layout.hideTopToolBar" data-ng-include="'{$uiResourcesPath}templates/top-toolbar.html'"></div>
             </xsl:if>
 
             <xsl:apply-templates mode="content" select="."/>
@@ -109,15 +111,22 @@
       <div class="container-fluid">
         <div class="row gn-row-main">
           <div class="col-sm-8 col-sm-offset-2">
-            <h1><xsl:value-of select="$env/system/site/name"/></h1>
-            <p><xsl:value-of select="/root/gui/strings/mainpage2"/></p>
-            <p><xsl:value-of select="/root/gui/strings/mainpage1"/></p>
-            <br/><br/>
+            <h1>
+              <xsl:value-of select="$env/system/site/name"/>
+            </h1>
+            <p>
+              <xsl:value-of select="/root/gui/strings/mainpage2"/>
+            </p>
+            <p>
+              <xsl:value-of select="/root/gui/strings/mainpage1"/>
+            </p>
+            <br/>
+            <br/>
             <div class="alert alert-warning" data-ng-hide="">
               <strong>
                 <xsl:value-of select="$i18n/warning"/>
               </strong>
-              <xsl:text> </xsl:text>
+              <xsl:text></xsl:text>
               <xsl:copy-of select="$i18n/nojs"/>
             </div>
           </div>
