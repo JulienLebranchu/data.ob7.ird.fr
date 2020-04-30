@@ -34,7 +34,7 @@ Ensure you have cloned the MI Data Catalogue Repository (this repo). This ensure
 Steps to clone MI Data Catalogue repository:
 
 - Launch a new Git CMD Window and navigate to (or create) a folder for your git local repositories.
-- Run: `git clone --recurse-submodules https://github.com/IrishMarineInstitute/data.marine.ie.git data-catalogue`
+- Run: `git clone --recurse-submodules https://github.com/JulienLebranchu/data.ob7.ird.fr.git data-catalogue`
 
 
 ## Detailed Build Steps:
@@ -96,7 +96,7 @@ To deploy a fully clean version, the above files should be deleted and a new dat
 - Log-in to the GeoNetwork instance (initially default as `Admin/Admin`): `/geonetwork/srv/eng/catalog.signin`
 - Under Admin Console:
 	- Change the password: `/geonetwork/srv/eng/admin.console#/organization`
-	- Change the catalogue name, organisation, host (e.g. [data.marine.ie]), preferred protocol and save changes: `/geonetwork/srv/eng/admin.console#/settings`
+	- Change the catalogue name, organisation, host (e.g. [data.ob7.ird.fr]), preferred protocol and save changes: `/geonetwork/srv/eng/admin.console#/settings`
 	- Run harvest: Create directory harvest (name it), run from the folder where the XML data has been saved to, 
 		- Group: `Sample Group`
 		- User: `Admin`
@@ -106,4 +106,4 @@ To deploy a fully clean version, the above files should be deleted and a new dat
 		- Ensure all is clicked
 - Go to Tools and click `rebuild index`.
 
-- **Alternatively**, use the [*dockerfile*](https://github.com/IrishMarineInstitute/data.marine.ie/blob/master/geonetwork/Dockerfile) included in this repo.
+- **Alternatively**, use the [*dockerfile*](https://github.com/JulienLebranchu/data.ob7.ird.fr/blob/master/geonetwork/Dockerfile) included in this repo.
