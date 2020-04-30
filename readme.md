@@ -1,7 +1,6 @@
-# Marine Institute Data Catalogue: GeoNetwork
+# Ob7 Data Catalogue: GeoNetwork
 
-This repository contains the custom files for the [GeoNetwork](https://geonetwork-opensource.org/) implementation of the
-Marine Institute's Data Catalogue.
+This repository contains the custom files for the [GeoNetwork](https://geonetwork-opensource.org/) implementation of Ob7 Data Catalogue. It's a fork of the Marine Institute's Data Catalogue.
 
 ---
 
