@@ -21,17 +21,14 @@ For details on the latest supported versions, please refer to: GeoNetwork Softwa
 - **Java**: Developing with GeoNetwork requires Java Development Kit (JDK) 1.8 or greater.
 - **Maven** 3.1.0+ GeoNetwork uses Maven to manage the build process and the dependencies.
     Install Maven from following the Maven Install Guide: <https://maven.apache.org/install.html>. &nbsp;
-    Manually set the following: Set the JAVA_HOME path (e.g. C:\Program Files\Java\jdk1.8.0_171​) &nbsp;
-    Add the Maven bin location to your 'path' environment variable. (e.g. C:\Program Files\apache-maven-3.5.4\bin​)
-- **Git**: GeoNetwork source code is stored and versioned in a Git repository on Github. Install Git for Windows. <https://git-scm.com/downloads>
+- **Git**: GeoNetwork source code is stored and versioned in a Git repository on Github.
 - **Ant**: GeoNetwork uses Ant to build the installer. Install from Ant Install Guide​: <https://ant.apache.org/manual/install.html> &nbsp;
-    Manually set the Ant bin location to you 'path' environment variable. (e.g. C:\Program Files\apache-ant-1.10.4\bin)
 - **Sphinx** - To create the GeoNetwork documentation in a nice format Sphinx is used.
 
-## Cloning the MI Data Catalogue Repository (this repo)
+## Cloning the Data Catalogue Repository (this repo)
 Ensure you have cloned the MI Data Catalogue Repository (this repo). This ensures you have the latest build scripts and MI specific file changes before starting the build.
 
-Steps to clone MI Data Catalogue repository:
+Steps to clone Data Catalogue repository:
 
 - Launch a new Git CMD Window and navigate to (or create) a folder for your git local repositories.
 - Run: `git clone --recurse-submodules https://github.com/JulienLebranchu/data.ob7.ird.fr.git data-catalogue`
