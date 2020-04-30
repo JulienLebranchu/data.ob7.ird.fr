@@ -26,7 +26,7 @@ For details on the latest supported versions, please refer to: GeoNetwork Softwa
 - **Sphinx** - To create the GeoNetwork documentation in a nice format Sphinx is used.
 
 ## Cloning the Data Catalogue Repository (this repo)
-Ensure you have cloned the MI Data Catalogue Repository (this repo). This ensures you have the latest build scripts and MI specific file changes before starting the build.
+Ensure you have cloned the Data Catalogue Repository (this repo). This ensures you have the latest build scripts and MI specific file changes before starting the build.
 
 Steps to clone Data Catalogue repository:
 
