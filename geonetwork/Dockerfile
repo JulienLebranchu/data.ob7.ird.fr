@@ -1,6 +1,6 @@
 # base image
 FROM ubuntu:latest
-LABEL maintainer="Andrew Conway <andrew.conway@marine.ie>"
+LABEL maintainer="Julien Lebranchu <julien.lebranchu@ird.fr>"
 
 # Inspired by
 # https://github.com/cloudbees/java-build-tools-dockerfile/blob/master/Dockerfile
@@ -63,7 +63,7 @@ ENV ANT_HOME /usr/share/ant
 # clone MI Data Catalogue data.marine.ie Repo 
 WORKDIR /usr/share/
 
-RUN git clone --recurse-submodules https://github.com/IrishMarineInstitute/data.marine.ie.git data-catalogue
+RUN git clone --recurse-submodules https://github.com/JulienLebranchu/data.ob7.ird.fr.git data-catalogue
 # OR workaround copy files from host - change first location as appropriate to your system
 # COPY H:\data-catalogue /data-catalogue
 
