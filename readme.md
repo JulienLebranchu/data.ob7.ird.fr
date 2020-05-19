@@ -44,14 +44,37 @@ Run the following:
 Run the commands:
 - `git clone --recurse-submodules https://github.com/geonetwork/core-geonetwork.git geonetwork`
 - `cd geonetwork`
-- `git checkout tags/3.4.2 -b build`
+- `git checkout tags/3.10.2 -b build`
 - `git status`
 
 Run a clean build by running the command:
 - `mvn clean install -DskipTests`
 
+To accelerate the compilation, you can use 2 core:
+- `mvn clean install -DskipTests -T 2C`
+
+
 The build should be successful.
-Note: Maven default location: C:\Users\<user>\.m2\repository. Output WAR is stored in: \geonetwork\web\target
+Note: Maven default location is %userprofile%\\.m2\repository on Windows and ~/.m2 on Linux. Output WAR is stored in: \geonetwork\web\target
+
+If there is some errors, you can change the mirrors of repository whith the instructions below in the file *settings.xml* (in maven configuration directory):
+```xml
+<mirrors>
+  <mirror>
+    <id>osgeo-release</id>
+    <name>OSGeo Repository</name>
+    <url>https://repo.osgeo.org/repository/release/</url>
+    <mirrorOf>osgeo</mirrorOf>
+  </mirror>
+  <mirror>
+    <id>geoserver-releases</id>
+    <name>Boundless Repository</name>
+    <url>https://repo.osgeo.org/repository/Geoserver-releases/</url>
+    <mirrorOf>boundless</mirrorOf>
+  </mirror>
+</mirrors>
+```
+You can also download some library directly on the repository of OsGeo : https://repo.osgeo.org/#browse/browse:release
 
 Pull in sub-modules for Plugins:
 
