@@ -85,6 +85,9 @@ Run commands:
 - `git submodule add https://github.com/metadata101/iso19139.sdn-csr.git`
 - `git submodule add https://github.com/metadata101/iso19139.sdn-cdi.git`
 
+
+# BELOW THIS POINT, IT'S STILL UNDER TESTING
+
 Navigate to the data-catalogue repository and run the MI script: mi_geonetwork_build.xml. This is an ant build script and will copy all required MI content into the build branch of the geonetwork repository (created earlier)
 
 - `cd data-catalogue`
