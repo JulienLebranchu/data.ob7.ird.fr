@@ -131,6 +131,6 @@ To deploy a fully clean version, the above files should be deleted and a new dat
 
 - **Alternatively**, use the [*dockerfile*](https://github.com/JulienLebranchu/data.ob7.ird.fr/blob/master/geonetwork/Dockerfile) included in this repo.
 
-## Configuration resources
+## Configuration resources
 - French:
 	- http://wiki.poleterresolide.fr/catalogue/geonetwork/configuration
